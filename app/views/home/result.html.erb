@@ -1,0 +1,91 @@
+
+<%= stylesheet_link_tag    'index', media: 'all', 'data-turbolinks-track' => true %>
+
+<head>
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+                <div class="navbar-header">
+                    <button type="button" href="https://pokemon-me0768.c9users.io/" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        Menu <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="https://pokemon-me0768.c9users.io/">
+                        <i class="fa fa-play-circle"></i> RETRY
+                    </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                        <li class="hidden">
+                            <a href="https://pokemon-me0768.c9users.io"></a>
+                        </li>
+                        
+                    </ul>
+                </div>
+        </div>
+    </nav>
+</head>
+
+<body>
+    <h1>결과입니다</h1>
+    <div class="result">
+        <h2 id="result_explain"><%=@name %>님에게 어울리는 포켓몬은 
+                                        
+         <% if @option1 %>
+            <%= @a_result[0]%>입니다!</h2>
+                <% case @a_result[0] %>
+                 <% when "푸린" %>
+                   <a href="https://ko.wikipedia.org/wiki/<%= @a_result[0]%>"><img src='<%= asset_path 'jiggly.gif'%>' alt='jiggly'/></a>
+                    <p><%= @a_result[0]%> 을(를) 더 알고싶다면 이미지를 클릭하세요</p>
+                    
+                    
+                <% when "피카츄" %>
+                         
+                    <a href="https://ko.wikipedia.org/wiki/<%= @a_result[0]%>"><img src='<%= asset_path 'pika.gif'%>' alt='jiggly'/></a>
+                    <p><%= @a_result[0]%> 을(를) 더 알고싶다면 이미지를 클릭하세요</p>
+                    
+                 <% when "파이리" %>
+                    
+                    <a href="https://ko.wikipedia.org/wiki/<%= @a_result[0]%>"><img src='<%= asset_path 'fire.gif'%>' alt='jiggly'/></a>
+                    <p><%= @a_result[0]%> 을(를) 더 알고싶다면 이미지를 클릭하세요</p>
+                    
+                <% when "잠만보" %>
+                   <a href="https://ko.wikipedia.org/wiki/<%= @b_result[0]%>"><img src='<%= asset_path 'jam.gif'%>' alt='jiggly'/></a>
+                   <p> <%= @b_result[0]%> 을(를) 더 알고싶다면 이미지를 클릭하세요%></p>
+                    
+                    
+                <% else %>
+                    
+                    <a href="https://ko.wikipedia.org/wiki/<%= @a_result[0]%>"><img src='<%= asset_path 'turtle.gif'%>' alt='jiggly'/></a>
+                    <p><%= @a_result[0]%> 을(를) 더 알고싶다면 이미지를 클릭하세요</p>
+                    
+                    
+                <% end %>
+            <% else %>
+            <%=@b_result[0]%> 
+                <% case @b_result[0] %>
+                    <% when "이브이" %>
+                     
+                    <a href="https://ko.wikipedia.org/wiki/<%= @b_result[0]%>"><img src='<%= asset_path 'evee.jpg'%>' alt='jiggly'/></a>
+                    <p><%= @b_result[0]%> 을(를) 더 알고싶다면 이미지를 클릭하세요</p>
+                    
+                    <% when "메타몽" %>
+                     
+                    <a href="https://ko.wikipedia.org/wiki/<%= @b_result[0]%>"><img src='<%= asset_path 'metamong.gif'%>' alt='jiggly'/></a>
+                    <p><%= @b_result[0]%> 을(를) 더 알고싶다면 이미지를 클릭하세요</p>
+                    
+                 
+                    
+                     <% when "고라파덕" %>
+                    <a href="https://ko.wikipedia.org/wiki/<%= @b_result[0]%>"><img src='<%= asset_path 'gora.gif'%>' alt='jiggly'/></a>
+                    <p><%= @b_result[0]%> 을(를) 더 알고싶다면 이미지를 클릭하세요</p>
+                    
+                    <% else %>
+                
+                    <a href="https://ko.wikipedia.org/wiki/<%= @b_result[0]%>"><img src='<%= asset_path 'digda.gif'%>' alt='jiggly'/></a>
+                    <p><%= @b_result[0]%> 을(를) 더 알고싶다면 이미지를 클릭하세요</p>
+                <% end %>
+        <% end %>
+    </div>
+</body>
+
